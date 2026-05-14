@@ -1,1 +1,41 @@
+import java.util.*;
 
+public class main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+
+        //入力要素数
+        int task=sc.nextInt();
+
+        //task回数分、演算処理分岐を行う。
+        for(int i = 0; i < task; i++) {
+            int calcu_A = sc.nextInt();  //最初の整数値
+            String op = sc.next();       //算術演算子（"+", "-", "*", "/", "%" のいずれか）
+            int culcu_B = sc.nextInt();  //2番目の整数値
+
+            //計算結果を格納するための変数resultを定義。
+            int result = 0;
+
+            //演算処理分岐
+            if(op.equals("+")) {          //加算処理
+                result = culcu_A + culcu_B;
+            } else if(op.equaks("-")) {   //減算処理
+                result = culcu_A - culcu_B;
+            } else if(op.equals("*")) {   //乗算処理
+                result = culcu_A * culcu_B;
+            } else if(op.equals("/")) {   //除算処理（整数同士の計算なので小数点以下は自動的に切り捨て）
+                result = culcu_A / culcu_B;
+            } else if(op.equals("%")) {   //剰余演算処理
+                result = culcu_A % culcu_B;
+            } else {
+                //想定外の演算子が入力された場合のエラーメッセージ
+                   (もっといい書き方があると思うため改善点。現状、ループが終了してしまう。)
+                System.out.println("不正な演算子が入力されました。");
+                break;
+            }
+            //計算結果を出力
+            System.out.println(result);
+        }
+        sc.close();
+    }
+}
