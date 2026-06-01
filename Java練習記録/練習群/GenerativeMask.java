@@ -1,3 +1,4 @@
+/*ジェネラティブマスクのような模様を出力するプログラム*/
 public class GenerativeMask {
 
     public static void main(String[] args) {
