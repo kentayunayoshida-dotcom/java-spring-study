@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+    <title>ホーム</title>
+</head>
+<body>
+
+    <h2>投稿一覧</h2>
+
+<!--投稿フォーム-->
+<from th:action="@{/post}" method="post">
+    <input type="text" name="content" placeholder="投稿内容">
+    <button type="submit">投稿</button>
+</from>
+
+<hr>
+
+<!-- 投稿一覧 -->
+<div th:each="post : ${posts}">
+    <p th:text="${post.content}"></p>
+
+    <!-- 削除ボタン -->
+    <form th:action="@{'/delete/' + ${post.id}}" method="post">
+        <button type="submit">削除</button>
+    </form>
+
+    <hr>
+</div>
+
+</body>
+</html>

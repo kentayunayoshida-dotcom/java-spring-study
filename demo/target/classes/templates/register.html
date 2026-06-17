@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+    <title>登録</title>
+</head>
+<body>
+
+<h2>ユーザー登録</h2>
+
+<from th:action="@{/register}" method="post">
+    <input type="text" name="username" placeholder="ユーザー名">
+    <input type="text" name="username" placeholder="パスワード">
+    <button type="submit">登録</button>
+</from>
+
+<a href="/login">ログインへ</a>
+
+</body>
+</html>
